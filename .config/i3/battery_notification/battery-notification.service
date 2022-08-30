@@ -1,0 +1,18 @@
+# /etc/systemd/system/battery-notification.service 
+
+[Unit]
+Description=low battery notification service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=30
+Environment="DISPLAY=:0" "XAUTHORITY=/home/outrovasco/.Xauthority"
+#User=outrovasco
+ExecStart=/bin/bash /home/outrovasco/.config/i3/battery_notification/bat0.sh
+User=root
+#Group=users
+
+[Install]
+WantedBy=multi-use.target

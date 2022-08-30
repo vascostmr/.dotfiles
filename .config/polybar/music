@@ -1,0 +1,17 @@
+#!/bin/bash
+
+
+if [ "$(playerctl status)" = "Playing" ]; then
+  title=`exec playerctl metadata xesam:title`
+  artist=`exec playerctl metadata xesam:artist`
+  album=`exec playerctl metadata xesam:album`
+  if [ "$artist" = "Various" ]; then
+    artist="";
+    echo "  $title"
+  else
+    echo "  $title - $artist - ($album)"
+  fi
+else
+  echo "   "
+fi
+

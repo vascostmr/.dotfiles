@@ -1,0 +1,37 @@
+#!/bin/bash
+
+#()🌣
+
+#DATE=$(date +'%A %d %b %Y')
+#DATE=$(date +'%a %d %b %Y    %H:%M')
+DATE=$(date +'%a %d %b %Y')
+
+# get current month
+MONTH=$(date +'%m')
+
+# between March and May 
+if [[ ${MONTH#0} -ge 3 && ${MONTH#0} -le 5 ]]; then
+#if [[ $((10#$MONTH)) -ge 3 && $((10#$MONTH)) -le 5 ]]; then
+#if [[ $MONTH -ge 3 && $MONTH -le 5 ]]; then
+  IMAGE=""
+  COLOR="#000000" 
+
+# between June and August
+elif [[ ${MONTH#0} -ge 6 && ${MONTH#0} -le 8 ]]; then
+  IMAGE=""
+  COLOR="#708376"
+
+# between September and November 
+elif [[ ${MONTH#0} -ge 9 && ${MONTH#0} -le 11 ]]; then
+  IMAGE="🌣"
+  IMAGE=""
+  COLOR="#708376"
+
+# between December and February
+else
+  IMAGE=""
+  COLOR="#EAEAEA"
+fi
+
+#echo "%{A:gsimplecal &:}%{F$COLOR}$IMAGE%{F-} $DATE%{A}"
+echo "%{A:gsimplecal &:}%{F$COLOR}$IMAGE%{F-} $DATE%{A}"
