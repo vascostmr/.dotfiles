@@ -9,9 +9,8 @@ if [ "$(playerctl status)" = "Playing" ]; then
     artist="";
     echo "  $title"
   else
-    echo "  $title - $artist - ($album)"
+    echo "%{F#fff} $title %{F#7f9} - $artist - %{F#3c7} ($album)"
   fi
 else
-  echo "   "
+  echo ""
 fi
-
